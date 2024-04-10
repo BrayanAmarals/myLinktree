@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+
 import styles from "@/styles/Home.module.css";
 import { Relogio, Data } from "@/components/stats";
 import { useState, useEffect } from "react";
@@ -13,6 +15,8 @@ import localFont from "next/font/local";
 
 const colus = localFont({ src: "../fonts/Colus-Regular.ttf" });
 const tommy = localFont({ src: "../fonts/made-tommy-bold.otf" });
+
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [time, relogioTheme, totalMinutes] = Relogio();
@@ -46,7 +50,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${styles.main} ${colus.className}`}>
+      <motion.main
+        className={`${styles.main} ${colus.className}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
         <div className={styles.videoContainer}>
           <video className={styles.videoBg} autoPlay loop muted>
             <source src={`/videos/${relogioTheme}.mp4`} type="video/mp4" />
@@ -93,15 +103,11 @@ export default function Home() {
               </div>
               <div className={styles.buttons}>
                 <button className={styles.pushable}>
-                  <a
-                    className={styles.pushable}
-                    href="https://brayanass.github.io/professional-portfolio/"
-                    target="_blank"
-                  >
+                  <Link className={styles.pushable} href="/portfolio">
                     <span className={`${styles.front} ${tommy.className}`}>
                       MEU PORTFÓLIO
                     </span>
-                  </a>
+                  </Link>
                 </button>
                 <button className={styles.pushable}>
                   <a
@@ -143,7 +149,7 @@ export default function Home() {
           alt="Borda inferior direita"
           className={styles.bottomRight}
         />
-      </main>
+      </motion.main>
     </>
   );
 }
