@@ -36,6 +36,7 @@ export function Relogio() {
       setTime(time);
       setTheme(theme);
       setTotalMinutes(totalMinutes);
+      console.log({ time, theme, totalMinutes });
     }, 1000);
     return () => clearInterval(timerId);
   }, []);
