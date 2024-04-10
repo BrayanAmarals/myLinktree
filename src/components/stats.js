@@ -24,7 +24,7 @@ export function Data() {
 }
 
 export function Relogio() {
-  const [time, setTime] = useState();
+  const [time, setTime] = useState(obterHoraAtual().time);
   const [theme, setTheme] = useState(obterHoraAtual().theme);
   const [totalMinutes, setTotalMinutes] = useState(
     obterHoraAtual().totalMinutes
@@ -36,7 +36,7 @@ export function Relogio() {
       setTime(time);
       setTheme(theme);
       setTotalMinutes(totalMinutes);
-      console.log({ time, theme, totalMinutes });
+      //console.log({ time, theme, totalMinutes });
     }, 1000);
     return () => clearInterval(timerId);
   }, []);
@@ -49,10 +49,11 @@ export function Relogio() {
     const hoursFormated = hours < 10 ? "0" + hours : hours;
     const minutesFormated = minutes < 10 ? "0" + minutes : minutes;
     const secondsFormated = seconds < 10 ? "0" + seconds : seconds;
+    const timeFormated = `${hoursFormated}:${minutesFormated}:${secondsFormated}`;
     const totalMinutes = hours * 60 + minutes;
     const theme = obterPorcentagemDoDia(totalMinutes);
     return {
-      time: `${hoursFormated}:${minutesFormated}:${secondsFormated}`,
+      time: timeFormated,
       theme: theme,
       totalMinutes: totalMinutes,
     };

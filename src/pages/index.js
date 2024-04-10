@@ -16,59 +16,51 @@ const tommy = localFont({ src: "../fonts/made-tommy-bold.otf" });
 
 export default function Home() {
   const [time, relogioTheme, totalMinutes] = Relogio();
-  const [percentage, setPercentage] = useState(0);
+  const [percentage, setPercentage] = useState();
+  const [themeDay, setThemeDay] = useState();
 
   useEffect(() => {
-    let percentageValue = 0;
     if (relogioTheme === "day") {
-      percentageValue = ((totalMinutes - 360) * 100) / 720;
+      setPercentage(((totalMinutes - 360) * 100) / 720);
+      setThemeDay(true);
+      console.log(`${percentage}%`);
     } else {
       if (totalMinutes > 1080) {
-        percentageValue = ((totalMinutes - 1080) * 100) / 720;
+        setPercentage(((totalMinutes - 1080) * 100) / 720);
+        setThemeDay(false);
       } else if (totalMinutes <= 360) {
-        percentageValue = ((360 + totalMinutes) * 100) / 720;
+        setPercentage(((360 + totalMinutes) * 100) / 720);
+        setThemeDay(false);
       }
     }
-    setPercentage(percentageValue);
   }, [relogioTheme, totalMinutes]);
 
   return (
     <>
       <Head>
         <title>
-          {relogioTheme === "day" ? "Olá, bom dia! 🌞" : "Olá, boa noite! 🌛"}
+          {themeDay === true ? "Olá, bom dia! 🌞" : "Olá, boa noite! 🌛"}
         </title>
         <meta name="description" content="Brayan Amaral" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main
-        className={`${styles.main} ${
-          relogioTheme === "day" ? styles.main : styles.mainNight
-        } ${colus.className}`}
-      >
+      <main className={`${styles.main} ${colus.className}`}>
         <div className={styles.videoContainer}>
-          {relogioTheme == "day" ? (
-            <video className={styles.videoBg} autoPlay loop muted>
-              <source src="/videos/daym.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <video className={styles.videoBg} autoPlay loop muted>
-              <source src="/videos/night.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <video className={styles.videoBg} autoPlay loop muted>
+            <source src={`/videos/${relogioTheme}.mp4`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
-          {relogioTheme == "day" ? (
+          {themeDay == true ? (
             <div
-              className={styles.sun}
+              className={`${styles.sun} ${styles.sunTransition}`}
               style={{ left: `${percentage}%` }}
             ></div>
           ) : (
             <div
-              className={styles.moon}
+              className={`${styles.moon} ${styles.moonTransition}`}
               style={{ left: `${percentage}%` }}
             ></div>
           )}
