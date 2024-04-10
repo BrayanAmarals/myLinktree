@@ -8,8 +8,6 @@ import formImage from "../../public/images/formImage-6ab0a45b.svg";
 import Image from "next/image";
 import Head from "next/head";
 
-import { motion } from "framer-motion";
-
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -19,13 +17,7 @@ const Home = () => {
       <Head>
         <title>Portfólio - Brayan Amaral</title>
       </Head>
-      <motion.div
-        className={`${montserrat.className}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div className={`${montserrat.className}`}>
         <section className={`${styles.mainContainer}`}>
           <Header />
           <section className={styles.banner}>
@@ -195,7 +187,7 @@ const Home = () => {
             </form>
           </div>
         </section>
-      </motion.div>
+      </div>
     </>
   );
 };
