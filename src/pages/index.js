@@ -35,7 +35,7 @@ export default function Home() {
         setThemeDay(false);
       }
     }
-  }, [relogioTheme, totalMinutes]);
+  }, [relogioTheme, totalMinutes, percentage]);
 
   return (
     <>

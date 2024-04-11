@@ -39,7 +39,7 @@ export function Relogio() {
       //console.log({ time, theme, totalMinutes });
     }, 1000);
     return () => clearInterval(timerId);
-  }, []);
+  }, [obterHoraAtual]);
 
   function obterHoraAtual() {
     const data = new Date();

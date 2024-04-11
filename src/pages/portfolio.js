@@ -34,14 +34,22 @@ const Home = () => {
               </div>
             </div>
 
-            <Image src={brayanAvatar} alt="" className={styles.avatar} />
+            <Image
+              src={brayanAvatar}
+              alt="Avatar do Brayan"
+              className={styles.avatar}
+            />
           </section>
         </section>
 
         <section className={styles.aboutMeContainer}>
           <div className={styles.aboutMe}>
             <div className={styles.brayanPhoto}>
-              <Image src={brayanPhoto} alt="" className={styles.photo} />
+              <Image
+                src={brayanPhoto}
+                alt="Foto do Brayan"
+                className={styles.photo}
+              />
             </div>
             <div className={styles.aboutTexts}>
               <h2 className={styles.aboutMeTitle}>SOBRE MIM</h2>
@@ -98,6 +106,7 @@ const Home = () => {
                           : {}
                       }
                       src={project.projectImg}
+                      alt={`Imagem do projeto ${project.projectTitle}`} // Adicione uma descrição significativa aqui
                     />
                     <div className={styles.projectTexts}>
                       <h3 className={styles.projectTitle}>
