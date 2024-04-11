@@ -236,7 +236,7 @@
 .projects {
   width: 70rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
 }

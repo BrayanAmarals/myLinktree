@@ -1,4 +1,4 @@
-import Header from "../components/Header/Header.jsx";
+import Header from "../components/Header/Header.js";
 import styles from "../styles/Portfolio.module.css";
 import brayanAvatar from "../../public/images/brayanAvatar-e9f1b459.png";
 import brayanPhoto from "../../public/images/brayanPhoto-1e8a8f18.jpeg";
@@ -116,7 +116,6 @@ const Home = () => {
                         target="_blank"
                         style={{
                           backgroundColor: project.color,
-                          pointerEvents: project.cursor,
                         }}
                       >
                         Visitar

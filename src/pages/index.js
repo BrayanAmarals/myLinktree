@@ -95,7 +95,11 @@ export default function Home() {
               </div>
               <div className={styles.buttons}>
                 <button className={styles.pushable}>
-                  <Link className={styles.pushable} href="/portfolio">
+                  <Link
+                    className={styles.pushable}
+                    href="/portfolio"
+                    target="_blank"
+                  >
                     <span className={`${styles.front} ${tommy.className}`}>
                       MEU PORTFÓLIO
                     </span>
@@ -113,7 +117,7 @@ export default function Home() {
                   </a>
                 </button>
                 <button className={styles.pushable}>
-                  <a
+                  <Link
                     className={styles.pushable}
                     href="https://github.com/BrayanASS"
                     target="_blank"
@@ -121,7 +125,7 @@ export default function Home() {
                     <span className={`${styles.front} ${tommy.className}`}>
                       GITHUB
                     </span>
-                  </a>
+                  </Link>
                 </button>
               </div>
             </div>
