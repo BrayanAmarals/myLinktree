@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.css";
 
 const obterDataAtual = () => {
@@ -24,11 +24,24 @@ export function Data() {
 }
 
 export function Relogio() {
-  const [time, setTime] = useState("");
-  const [theme, setTheme] = useState("");
-  const [totalMinutes, setTotalMinutes] = useState(0);
+  const [time, setTime] = useState(obterHoraAtual().time);
+  const [theme, setTheme] = useState(obterHoraAtual().theme);
+  const [totalMinutes, setTotalMinutes] = useState(
+    obterHoraAtual().totalMinutes
+  );
 
-  const obterHoraAtual = useCallback(() => {
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      const { time, theme, totalMinutes } = obterHoraAtual();
+      setTime(time);
+      setTheme(theme);
+      setTotalMinutes(totalMinutes);
+      //console.log({ time, theme, totalMinutes });
+    }, 1000);
+    return () => clearInterval(timerId);
+  }, []);
+
+  function obterHoraAtual() {
     const data = new Date();
     const hours = data.getHours();
     const minutes = data.getMinutes();
@@ -44,23 +57,11 @@ export function Relogio() {
       theme: theme,
       totalMinutes: totalMinutes,
     };
-  }, []);
+  }
 
-  useEffect(() => {
-    const updateClock = () => {
-      const { time, theme, totalMinutes } = obterHoraAtual();
-      setTime(time);
-      setTheme(theme);
-      setTotalMinutes(totalMinutes);
-    };
-
-    const timerId = setInterval(updateClock, 1000);
-    return () => clearInterval(timerId);
-  }, [obterHoraAtual]);
-
-  const obterPorcentagemDoDia = useCallback((totalMinutes) => {
+  function obterPorcentagemDoDia(totalMinutes) {
     return totalMinutes >= 360 && totalMinutes < 1080 ? "day" : "night";
-  }, []);
+  }
 
   return [time, theme, totalMinutes];
 }
