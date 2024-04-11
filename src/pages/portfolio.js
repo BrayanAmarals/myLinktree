@@ -7,11 +7,52 @@ import projectsArray from "../data/projects";
 import formImage from "../../public/images/formImage-6ab0a45b.svg";
 import Image from "next/image";
 import Head from "next/head";
+import { useRef, useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notify = () => toast("Wow so easy !");
 
 import { Montserrat } from "next/font/google";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Home = () => {
+  const formRef = useRef(null); // Crie uma referência para o elemento do formulário
+  const [lastSentTime, setLastSentTime] = useState(null);
+  const minTimeBetweenEmails = 60000; // 30 segundos
+
+  useEffect(() => {
+    emailjs.init("ENHrrMob3MwEYp6-j");
+  }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (canSendEmail()) {
+      emailjs
+        .sendForm("service_2xj6gkx", "template_k136me2", formRef.current)
+        .then(
+          (result) => {
+            console.log(result.text);
+            toast("Email enviado!");
+            setLastSentTime(Date.now());
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    } else {
+      toast("Espere um pouco antes de enviar outro email.");
+    }
+  };
+
+  const canSendEmail = () => {
+    if (!lastSentTime) return true;
+    const elapsedTime = Date.now() - lastSentTime;
+    return elapsedTime >= minTimeBetweenEmails;
+  };
   return (
     <>
       <Head>
@@ -20,6 +61,7 @@ const Home = () => {
       <div className={`${montserrat.className}`}>
         <section className={`${styles.mainContainer}`}>
           <Header />
+          <ToastContainer />
           <section className={styles.banner}>
             <div className={styles.titles}>
               <div className={styles.mainTitle}>
@@ -142,10 +184,10 @@ const Home = () => {
           <div className={styles.contact}>
             <Image src={formImage} alt="" className={styles.contactImage} />
             <form
-              action="https://formsubmit.co/brayanamarals01@gmail.com"
-              method="POST"
               className={styles.contactForm}
+              ref={formRef}
               target="_blank"
+              onSubmit={handleSubmit}
             >
               <h2 className={styles.contactTitle}>CONTATO</h2>
               <h2 className={styles.contactSubTitle}>Envie-me uma mensagem</h2>
@@ -153,7 +195,7 @@ const Home = () => {
                 <input
                   type="text"
                   placeholder="Primeiro nome"
-                  name="firstName"
+                  name="user_name"
                   className={styles.input}
                   required
                 />
@@ -161,20 +203,20 @@ const Home = () => {
                   type="text"
                   placeholder="Sobrenome"
                   className={styles.input}
-                  name="lastName"
+                  name="user-lastName"
                   required
                 />
                 <input
                   placeholder="Email"
                   type="email"
-                  name="email"
+                  name="user_email"
                   className={styles.input}
                   required
                 />
                 <input
                   placeholder="Número de telefone"
                   className={styles.input}
-                  name="phone"
+                  name="user-phone"
                   required
                 />
               </div>
@@ -185,7 +227,7 @@ const Home = () => {
                 name="message"
                 className={styles.textArea}
               ></textarea>
-              <button type="submit" className={styles.formButton}>
+              <button type="submit" value="Send" className={styles.formButton}>
                 Enviar
                 <span></span>
                 <span></span>
