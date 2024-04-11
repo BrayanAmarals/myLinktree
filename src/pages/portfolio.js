@@ -31,13 +31,14 @@ const Home = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (canSendEmail()) {
+      setLastSentTime(Date.now());
+      toast("Email enviado!");
       emailjs
         .sendForm("service_2xj6gkx", "template_k136me2", formRef.current)
+
         .then(
           (result) => {
             console.log(result.text);
-            toast("Email enviado!");
-            setLastSentTime(Date.now());
           },
           (error) => {
             console.log(error.text);
