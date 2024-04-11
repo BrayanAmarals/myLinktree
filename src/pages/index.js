@@ -25,7 +25,7 @@ export default function Home() {
     if (relogioTheme === "day") {
       setPercentage(((totalMinutes - 360) * 100) / 720);
       setThemeDay(true);
-      console.log(`${percentage}%`);
+      console.log(`${percentage}% ${relogioTheme}`);
     } else {
       if (totalMinutes > 1080) {
         setPercentage(((totalMinutes - 1080) * 100) / 720);
@@ -35,7 +35,7 @@ export default function Home() {
         setThemeDay(false);
       }
     }
-  }, [relogioTheme, totalMinutes, percentage]);
+  }, [relogioTheme, totalMinutes]);
 
   return (
     <>

@@ -28,8 +28,8 @@ const Home = () => {
               </div>
               <div>
                 <p className={styles.description}>
-                  "Front-end e UI design são minhas ferramentas <br />
-                  para traduzir ideias em interfaces memoráveis."
+                  &quot;Front-end e UI design são minhas ferramentas <br />
+                  para traduzir ideias em interfaces memoráveis.&quot;
                 </p>
               </div>
             </div>
