@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
 
 import styles from "@/styles/Home.module.css";
 import { Relogio, Data } from "@/components/stats";
@@ -49,6 +50,7 @@ export default function Home() {
       </Head>
 
       <main className={`${styles.main} ${colus.className}`}>
+        <Analytics />
         <div className={styles.videoContainer}>
           <video className={styles.videoBg} autoPlay loop muted>
             <source src={`/videos/${relogioTheme}.mp4`} type="video/mp4" />
