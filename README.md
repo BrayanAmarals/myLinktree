@@ -1,1 +1,1 @@
-![image](https://github.com/BrayanASS/myLinktree/assets/80291252/4d7f0476-dd43-4378-9121-54c28b189054)
+![image](https://github.com/BrayanASS/myLinktree/assets/80291252/d104fe0f-58f4-4288-b827-0898054712ed)
