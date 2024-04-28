@@ -10,7 +10,7 @@ const Header = () => {
         <Image src={brayanLogo} alt="Logo brayan" className={styles.logo} />
         <div className={styles.socialLinks}>
           <a
-            href="https://github.com/BrayanASS"
+            href="https://github.com/BrayanAmarals"
             className={styles.iconDiv}
             target="_blank"
           >
