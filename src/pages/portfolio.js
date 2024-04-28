@@ -107,13 +107,13 @@ const Home = () => {
               <h2 className={styles.aboutMeTitle}>SOBRE MIM</h2>
               <h2 className={styles.whoAreYou}>Quer saber quem sou?</h2>
               <p className={styles.descriptionAboutMe}>
-                "Olá! Sou Brayan Amaral, um Desenvolvedor Web de Goiânia-GO,
-                apaixonado por front-end e UI/UX design, com o objetivo de me
-                tornar um desenvolvedor Full Stack excepcional.
+                &quot;Olá! Sou Brayan Amaral, um Desenvolvedor Web de
+                Goiânia-GO, apaixonado por front-end e UI/UX design, com o
+                objetivo de me tornar um desenvolvedor Full Stack excepcional.
                 <br />
                 <br />
                 Com 22 anos de idade e 4 anos de experiência em programação,
-                estou em constante busca pelo aprimoramento profissional."
+                estou em constante busca pelo aprimoramento profissional.&quot;
               </p>
               <div className={styles.socialLinks}>
                 <a
