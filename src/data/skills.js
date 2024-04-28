@@ -111,11 +111,11 @@ const skillsArray = [
   },
   {
     id: 10,
-    name: "ElementorWP",
+    name: "Firebase",
     description:
-      "Adobe Photoshop é um editor gráfico raster desenvolvido e publicado pela Adobe para Windows e macOS. Foi originalmente criado em 1987 por Thomas e John Knoll. Desde então, o software se tornou a ferramenta mais utilizada para arte digital profissional, principalmente na edição de gráficos raster.",
-    link: "https://www.figma.com",
-    icon: <SiElementor style={{ color: "white", fontSize: "40px" }} />,
+      "React é um framework JavaScript criado pelo Facebook (atual Meta) que é usado para criar interfaces de usuário (UI) em aplicativos web. Ele é popular por ser fácil de usar, altamente flexível e escalável, e é usado por muitas empresas de tecnologia, incluindo o Facebook, Instagram e Airbnb.",
+    link: "https://react.dev",
+    icon: <SiFirebase style={{ color: "white", fontSize: "40px" }} />,
   },
   {
     id: 11,
@@ -143,12 +143,13 @@ const skillsArray = [
   },
   {
     id: 14,
-    name: "PostgresSQL",
+    name: "ElementorWP",
     description:
-      "React é um framework JavaScript criado pelo Facebook (atual Meta) que é usado para criar interfaces de usuário (UI) em aplicativos web. Ele é popular por ser fácil de usar, altamente flexível e escalável, e é usado por muitas empresas de tecnologia, incluindo o Facebook, Instagram e Airbnb.",
-    link: "https://react.dev",
-    icon: <SiPostgresql style={{ color: "white", fontSize: "40px" }} />,
+      "Adobe Photoshop é um editor gráfico raster desenvolvido e publicado pela Adobe para Windows e macOS. Foi originalmente criado em 1987 por Thomas e John Knoll. Desde então, o software se tornou a ferramenta mais utilizada para arte digital profissional, principalmente na edição de gráficos raster.",
+    link: "https://www.figma.com",
+    icon: <SiElementor style={{ color: "white", fontSize: "40px" }} />,
   },
+
   {
     id: 15,
     name: "AWS",
@@ -158,12 +159,12 @@ const skillsArray = [
     icon: <SiAmazonaws style={{ color: "white", fontSize: "40px" }} />,
   },
   {
-    id: 16,
-    name: "Firebase",
+    id: 14,
+    name: "PostgresSQL",
     description:
       "React é um framework JavaScript criado pelo Facebook (atual Meta) que é usado para criar interfaces de usuário (UI) em aplicativos web. Ele é popular por ser fácil de usar, altamente flexível e escalável, e é usado por muitas empresas de tecnologia, incluindo o Facebook, Instagram e Airbnb.",
     link: "https://react.dev",
-    icon: <SiFirebase style={{ color: "white", fontSize: "40px" }} />,
+    icon: <SiPostgresql style={{ color: "white", fontSize: "40px" }} />,
   },
 ];
 

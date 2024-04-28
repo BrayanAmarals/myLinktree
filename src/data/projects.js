@@ -5,6 +5,7 @@ import goiasEletronicos from "../../public/images/goiasEletronicos-0efbc2ef.png"
 import projetoCQD from "../../public/images/projetoCQD-feb1aef8.png";
 import euQuero from "../../public/images/euQuero-8611b21d.png";
 import sipdi from "../../public/images/sipdi-9c1ea254.png";
+import vortexC from "../../public/images/vortexC.png";
 
 const projects = [
   {
@@ -15,6 +16,16 @@ const projects = [
     projectDescription:
       "Site institucional para a loja automativa Tutty Motors. Desenvolvido com NextJS e Firebase, esse site possui um sistema de login administrativo e gerenciamento de produtos. Foi meu primeiro projeto, e nele pude participar de parte do desenvolvimento front-end e de toda a produção do design.",
     projectLink: "https://www.tuttymotors.com.br",
+    mobile: false,
+  },
+  {
+    id: 2,
+    projectImg: vortexC,
+    projectTopTitle: "Landing Page",
+    projectTitle: "Vortex Computadores",
+    projectDescription:
+      "Landing page desenvolvida para desenvolvimento próprio. Criado desde o início por mim, esse projeto foi desenvolvido em NextJs e Tailwind, sendo a primeira vez utilizando esse framework.",
+    projectLink: "https://vortex-computadores.vercel.app/",
     mobile: false,
   },
   {

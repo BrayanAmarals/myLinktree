@@ -12,8 +12,63 @@
   background-size: cover;
   height: 100vh;
   z-index: 1;
+  overflow-x: hidden;
+}
+.header {
+  height: 5rem;
+  width: 99vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem 0 2rem;
+  margin-bottom: 3rem;
 }
 
+.logo {
+  height: 4rem;
+  width: auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.socialLinks {
+  display: flex;
+
+  flex-direction: row;
+  gap: 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.iconDiv {
+  background-color: #b452c5;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.icon {
+  font-size: 20px;
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .logo {
+    height: 3rem;
+  }
+  .icon {
+    font-size: 15px;
+  }
+  .iconDiv {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .socialLinks {
+    display: none;
+  }
+}
 .banner {
   width: 100%;
   display: flex;
@@ -76,11 +131,23 @@
     border-color: orange;
   }
 }
+.textBoxes {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 1rem;
+}
 
 .description {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 200;
   color: #d7ccd9;
+}
+
+.customShape {
+  position: relative;
+  font-weight: 600;
 }
 
 .avatar {
@@ -118,17 +185,15 @@
   box-shadow: 10px 10px 0px 0px #d7ccd9;
   overflow-y: hidden;
   width: auto;
-  height: 30rem;
+  height: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .photo {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -149,7 +214,7 @@
   width: 100%;
   margin: 1.5rem 0px 0px 0px;
   font-size: 18px;
-  color: #242323;
+  color: #4e4d4d;
 }
 
 .skillsContainer {
@@ -483,6 +548,12 @@ textarea::placeholder {
   --n: 4;
 }
 
+@media screen and (max-width: 1600px) {
+  .avatar {
+    width: 30rem;
+  }
+}
+
 @media screen and (max-width: 1320px) {
   .banner {
     gap: 2rem;
@@ -506,7 +577,7 @@ textarea::placeholder {
   }
 
   .aboutTexts {
-    width: 100%;
+    width: 50%;
   }
 
   .skills {
@@ -553,7 +624,9 @@ textarea::placeholder {
   .avatar {
     width: 20rem;
   }
-
+  .aboutTexts {
+    width: 100%;
+  }
   .description {
     font-size: 18px;
     font-weight: 200;

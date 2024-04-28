@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header.js";
 import styles from "../styles/Portfolio.module.css";
 import brayanAvatar from "../../public/images/brayanAvatar-e9f1b459.png";
-import brayanPhoto from "../../public/images/brayanPhoto-1e8a8f18.jpeg";
+import brayanPhoto from "../../public/images/brayanPhoto.jpg";
 import skillsArray from "../data/skills";
 import projectsArray from "../data/projects";
 import formImage from "../../public/images/formImage-6ab0a45b.svg";
@@ -9,6 +9,8 @@ import Image from "next/image";
 import Head from "next/head";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+
+import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -69,10 +71,17 @@ const Home = () => {
                 <h1 className={styles.hi}>Olá, meu nome é</h1>
                 <h1 className={styles.brayan}>Brayan...</h1>
               </div>
-              <div>
+              <div className={styles.textBoxes}>
                 <p className={styles.description}>
-                  &quot;Front-end e UI design são minhas ferramentas <br />
-                  para traduzir ideias em interfaces memoráveis.&quot;
+                  Desenvolvedor{" "}
+                  <span className={styles.customShape}>Front-end;</span>
+                </p>
+                <p className={styles.description}>
+                  Designer <span className={styles.customShape}>Gráfico;</span>
+                </p>
+                <p className={styles.description}>
+                  Designer{" "}
+                  <span className={styles.customShape}>de Interfaces.</span>
                 </p>
               </div>
             </div>
@@ -98,14 +107,37 @@ const Home = () => {
               <h2 className={styles.aboutMeTitle}>SOBRE MIM</h2>
               <h2 className={styles.whoAreYou}>Quer saber quem sou?</h2>
               <p className={styles.descriptionAboutMe}>
-                Meu nome é Brayan Amaral, tenho atualmente 20 anos e estou
-                cursando Engenharia de Computação na UFG. Meu trabalho está
-                focado principalmente em desevolvimento web front-end e UI/UX
-                design.
+                "Olá! Sou Brayan Amaral, um Desenvolvedor Web de Goiânia-GO,
+                apaixonado por front-end e UI/UX design, com o objetivo de me
+                tornar um desenvolvedor Full Stack excepcional.
                 <br />
-                Estudo programação há aproximadamente 2 anos, porém, não para
-                por aí, estou buscando me desenvolver constantemente.
+                <br />
+                Com 22 anos de idade e 4 anos de experiência em programação,
+                estou em constante busca pelo aprimoramento profissional."
               </p>
+              <div className={styles.socialLinks}>
+                <a
+                  href="https://github.com/BrayanASS"
+                  className={styles.iconDiv}
+                  target="_blank"
+                >
+                  <SiGithub className={styles.icon} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/brayanamaralss/"
+                  className={styles.iconDiv}
+                  target="_blank"
+                >
+                  <SiLinkedin className={styles.icon} />
+                </a>
+                <a
+                  href="https://www.instagram.com/brayan_amarals"
+                  className={styles.iconDiv}
+                  target="_blank"
+                >
+                  <SiInstagram className={styles.icon} />
+                </a>
+              </div>
             </div>
           </div>
         </section>
