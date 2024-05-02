@@ -6,6 +6,7 @@ import projetoCQD from "../../public/images/projetoCQD-feb1aef8.png";
 import euQuero from "../../public/images/euQuero-8611b21d.png";
 import sipdi from "../../public/images/sipdi-9c1ea254.png";
 import vortexC from "../../public/images/vortexC.png";
+import petWorld from "../../public/images/petWorld.png";
 
 const projects = [
   {
@@ -26,6 +27,27 @@ const projects = [
     projectDescription:
       "Landing page desenvolvida para desenvolvimento próprio. Criado desde o início por mim, esse projeto foi desenvolvido em NextJs e Tailwind, sendo a primeira vez utilizando esse framework.",
     projectLink: "https://vortex-computadores.vercel.app/",
+    mobile: false,
+  },
+  {
+    id: 2,
+    projectImg: petWorld,
+    projectTopTitle: "Instucional com Catálogo",
+    projectTitle: "PetWorld",
+    projectDescription:
+      "Site institucional com página de catálogo, página de login administrativo e dashboard de gerenciamento de produtos com função de de remoção, adição e edição. Produzido com NextJS, Tailwind e os serviços de autenticação e database do Firebase.",
+    projectLink: "https://bas-petworld.vercel.app/",
+    mobile: false,
+  },
+  {
+    id: 4,
+    projectImg: projetoCQD,
+    projectTopTitle: "UI/UX",
+    projectTitle: "Projeto CQD",
+    projectDescription:
+      "Projeto de Sistema de Aulas, sendo ele o projeto de design mais bem planejado que fiz até hoje, mesmo não sendo executado por completo, acredito ser interessante trazê-lo, pois nele pude demonstrar um pouco que aprendi depois de um tempo estudando design gráfico.",
+    projectLink:
+      "https://www.figma.com/file/47nVRt9rhKClqcfLNOBGLD/projeto-cqd?type=design&node-id=0%3A1&mode=design&t=28f3n0okSJGvZ1iu-1",
     mobile: false,
   },
   {
@@ -60,17 +82,6 @@ const projects = [
       "Projeto que desenvolvi enquanto estudava UI Design, período este onde pude aprender diversas técnicas para prender a atenção do usuário e ter um site mais bonito e acessível.",
     projectLink:
       "https://www.figma.com/file/CIZKsjPVdXGvOAcJjd7Na4/Capacita%C3%A7%C3%A3o-NATI?type=design&node-id=0%3A1&mode=design&t=hSQ3NJcbXx3OTFv5-1",
-    mobile: false,
-  },
-  {
-    id: 4,
-    projectImg: projetoCQD,
-    projectTopTitle: "UI/UX",
-    projectTitle: "Projeto CQD",
-    projectDescription:
-      "Projeto de Sistema de Aulas, sendo ele o projeto de design mais bem planejado que fiz até hoje, mesmo não sendo executado por completo, acredito ser interessante trazê-lo, pois nele pude demonstrar um pouco que aprendi depois de um tempo estudando design gráfico.",
-    projectLink:
-      "https://www.figma.com/file/47nVRt9rhKClqcfLNOBGLD/projeto-cqd?type=design&node-id=0%3A1&mode=design&t=28f3n0okSJGvZ1iu-1",
     mobile: false,
   },
 
