@@ -9,22 +9,20 @@ import Image from "next/image";
 import Head from "next/head";
 import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
-
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const notify = () => toast("Wow so easy !");
+const notify = () => toast("Wow so easy!");
 
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Home = () => {
-  const formRef = useRef(null); // Crie uma referência para o elemento do formulário
+  const formRef = useRef(null);
   const [lastSentTime, setLastSentTime] = useState(null);
-  const minTimeBetweenEmails = 60000; // 30 segundos
+  const minTimeBetweenEmails = 60000;
 
   useEffect(() => {
     emailjs.init("ENHrrMob3MwEYp6-j");
@@ -37,7 +35,6 @@ const Home = () => {
       toast("Email enviado!");
       emailjs
         .sendForm("service_2xj6gkx", "template_k136me2", formRef.current)
-
         .then(
           (result) => {
             console.log(result.text);
@@ -56,6 +53,7 @@ const Home = () => {
     const elapsedTime = Date.now() - lastSentTime;
     return elapsedTime >= minTimeBetweenEmails;
   };
+
   return (
     <>
       <Head>
@@ -90,6 +88,7 @@ const Home = () => {
               src={brayanAvatar}
               alt="Avatar do Brayan"
               className={styles.avatar}
+              priority={true} // Carrega essa imagem com prioridade
             />
           </section>
         </section>
@@ -101,6 +100,8 @@ const Home = () => {
                 src={brayanPhoto}
                 alt="Foto do Brayan"
                 className={styles.photo}
+                width={500}
+                height={500}
               />
             </div>
             <div className={styles.aboutTexts}>
@@ -181,7 +182,9 @@ const Home = () => {
                           : {}
                       }
                       src={project.projectImg}
-                      alt={`Imagem do projeto ${project.projectTitle}`} // Adicione uma descrição significativa aqui
+                      alt={`Imagem do projeto ${project.projectTitle}`}
+                      width={500}
+                      height={300}
                     />
                     <div className={styles.projectTexts}>
                       <h3 className={styles.projectTitle}>
@@ -215,7 +218,13 @@ const Home = () => {
         </section>
         <section className={styles.contactContainer}>
           <div className={styles.contact}>
-            <Image src={formImage} alt="" className={styles.contactImage} />
+            <Image
+              src={formImage}
+              alt=""
+              className={styles.contactImage}
+              width={400}
+              height={400}
+            />
             <form
               className={styles.contactForm}
               ref={formRef}
